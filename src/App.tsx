@@ -2,10 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import PublicLayout from "@/layouts/public-layout";
 import AuthenticationLayout from "@/layouts/auth-layout";
+import MainLayout from "./layouts/main-layout";
 
 import HomePage from "@/routes/home";
-import SignUp from "./routes/sign-up";
-import SignIn from "./routes/sign-in";
+import SignUpPage from "./routes/sign-up";
+import SignInPage from "./routes/sign-in";
+import ProtectRoutes from "./layouts/protected-routes";
 
 const App = () => {
   return (
@@ -18,11 +20,20 @@ const App = () => {
 
         {/* authentication layout */}
         <Route element={<AuthenticationLayout />}>
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin/*" element={<SignInPage />} />
+          <Route path="/signup/*" element={<SignUpPage />} />
         </Route>
 
         {/* protected routes */}
+        <Route
+          element={
+            <ProtectRoutes>
+              <MainLayout />
+            </ProtectRoutes>
+          }
+        >
+          {/* add all protected routes */}
+        </Route>
       </Routes>
     </Router>
   );
