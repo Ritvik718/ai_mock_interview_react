@@ -8,6 +8,8 @@ import HomePage from "@/routes/home";
 import SignUpPage from "./routes/sign-up";
 import SignInPage from "./routes/sign-in";
 import ProtectRoutes from "./layouts/protected-routes";
+import { Generate } from "./components/generate";
+import { Dashboard } from "./routes/dashboard";
 
 const App = () => {
   return (
@@ -33,6 +35,9 @@ const App = () => {
           }
         >
           {/* add all protected routes */}
+          <Route element={<Generate />} path="/generate">
+            <Route index element={<Dashboard />} />
+          </Route>
         </Route>
       </Routes>
     </Router>
