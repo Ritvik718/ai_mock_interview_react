@@ -1,4 +1,4 @@
-# Interview AI Platform
+# AI Mock Interview Platform
 
 ## Overview
 Interview AI Platform is designed to enhance interview preparation by providing a seamless and interactive experience. The platform allows users to create custom mock interviews tailored to specific job roles, answer questions in real-time, and receive AI-driven feedback. Using speech-to-text conversion, responses are transcribed and analyzed against expected answers by Google Gemini AI. Users receive insightful feedback, helping them refine their responses. The system ensures a fair evaluation process by allowing multiple practice attempts but restricting final submission to one per question. With secure authentication and cloud storage, users can track their progress and access feedback anytime through their personalized dashboard.
